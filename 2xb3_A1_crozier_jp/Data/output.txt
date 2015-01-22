@@ -1,0 +1,80 @@
+The greatest common divisor for complex number 100.0 + -30.0i + 125.0 + 42.0i is 0.0 + -1.0
+The resulting complex number for rotating 1.0 + 1.0i 20 degrees is 1.281712764111577 + 0.5976724774602398i
+The resulting voltage for a current of -4215232.0 + 423422.0i and an impedance of 200.0 + 1.0i is -8.43469822E8 + 8.0469168E7
+The resulting current for a voltage of 5.0 + 2.0i and an impedance of 4.0 + 2.0i is 0.8275862068965517 + 0.06896551724137931
+The greatest common divisor for complex number 124.0 + 4444444.0i + 1.0 + 0.0i is 1.0 + 0.0
+The resulting complex number for rotating 9123.0 + -2333.0i 729 degrees is 8645.719124310588 + -3731.4285231704707i
+The resulting voltage for a current of 1111.0 + 2222.0i and an impedance of 3333.0 + 44444.0i is -9.5051605E7 + 5.678321E7
+The resulting current for a voltage of 42.0 + 42.0i and an impedance of 42.0 + 42.0i is 1.0 + 0.0
+The greatest common divisor for complex number 38.8263 + 29.223i + 1.2874 + 844.2222i is 3.552713678800501E-15 + 0.0
+The resulting complex number for rotating -62.0 + -79.0i 35 degrees is -96.09996521765012 + -29.1512724450655i
+The resulting voltage for a current of 324.0 + 22.322i and an impedance of 592.0 + 10.0i is 191584.78 + 16454.624
+The resulting current for a voltage of 22.0 + 52.0i and an impedance of -1.0 + -5555.0i is -90.61543287327478 + -38.318067754077795
+The greatest common divisor for complex number 456.0 + 22.0i + 4789.645 + 44.0i is -1.4551915228366852E-11 + 3.637978807091713E-12
+The resulting complex number for rotating 6889.0 + 4.0i 22 degrees is 6388.868000484262 + -2576.956086623951i
+The resulting voltage for a current of 118.0 + 698.345i and an impedance of 226.5 + 446.0i is -284734.87 + 210803.14250000002
+The resulting current for a voltage of 0.0 + 0.0i and an impedance of 1.0E-6 + 0.0i is NaN + NaN
+The greatest common divisor for complex number 798.0 + -546.56i + 889.0 + 645.0i is 0.0 + -4.547473508864641E-13
+The resulting complex number for rotating 46.0 + -2.3454i 0 degrees is 46.0 + -2.3454i
+The resulting voltage for a current of -498.0 + 55.455i and an impedance of 465.0 + 125.0i is -238501.875 + -36463.425
+The resulting current for a voltage of 7.0 + -9.0i and an impedance of -8.0 + 7.4787i is -0.9485253846153846 + -0.15114692307692312
+The greatest common divisor for complex number -978.0 + 785.0i + -112.0 + 66.0i is 1.0 + 0.0
+The resulting complex number for rotating 465.0 + -79.354i 55 degrees is 201.71005158072774 + -426.4212851245821i
+The resulting voltage for a current of -24.0 + 5.0i and an impedance of 6.55 + 1.0i is -162.2 + 8.75
+The resulting current for a voltage of 789.0 + -64.44i and an impedance of -552.0 + 6.47645i is -0.6956498606964583 + -0.04860738532735078
+The greatest common divisor for complex number -9.0 + 8.0i + -7.576 + 6.0i is 8.881784197001252E-16 + 0.0
+The resulting complex number for rotating 443.0 + 42.0i -36 degrees is 333.7075479118178 + 294.3675805293134i
+The resulting voltage for a current of 225.0 + 46.354i and an impedance of 87.23 + 2000.555i is -73106.97647 + 454168.33442
+The resulting current for a voltage of 568.0 + 496.0i and an impedance of 335.55 + 232.756i is 0.5381953010692178 + -0.06019167135621838
+The greatest common divisor for complex number -123.0 + 45.0i + 88.0 + 52.0i is 1.0 + 1.0
+The resulting complex number for rotating -46.0 + 87.0i 36 degrees is 13.92253520819758 + 97.4226001160742i
+The resulting voltage for a current of 442.0 + -22.0i and an impedance of 44.645 + -36.0i is 18941.09 + -16894.19
+The resulting current for a voltage of 4654.0 + 55.3453i and an impedance of 22.0 + -55.856i is 0.0045837439626095185 + -0.01205622876766949
+The greatest common divisor for complex number 56.0 + 2.0i + 44.55555555555556 + -89.0i is -1.4210854715202004E-14 + 0.0
+The resulting complex number for rotating 12.0 + -55.0i 6 degrees is 6.185197264698338 + -55.95304580446687i
+The resulting voltage for a current of 452.0 + 22.766i and an impedance of 78.0 + 98.0i is 33024.932 + 46071.748
+The resulting current for a voltage of 442.0 + -4.55i and an impedance of 6.86 + 8.0i is 0.015332418360644176 + 0.018257381229730613
+The greatest common divisor for complex number 88.0 + 997.77i + -52.0 + -46.0i is 0.0 + -4.547473508864641E-13
+The resulting complex number for rotating 42.464 + -65.0i 22 degrees is 15.02250662828978 + -76.17424492965446i
+The resulting voltage for a current of 1.0 + 2.999i and an impedance of 3.0 + -8.0i is 26.992 + 0.9969999999999999
+The resulting current for a voltage of 4.0 + 5.0i and an impedance of -6.0 + 7.9i is 0.3780487804878049 + 1.502439024390244
+The polar form for complex number 1.0 + 4.0i is a length of 4.123105625617661 and an angle of 1.3258176636680326 rads.
+The polar form for complex number -2.0 + 5.0i is a length of 5.385164807134504 and an angle of 1.9513027039072617 rads.
+The polar form for complex number 22.0 + 5.0i is a length of 22.561028345356956 and an angle of 0.223476601140633 rads.
+The polar form for complex number 435.0 + 1523.0i is a length of 1583.904668848476 and an angle of 1.2925833905369446 rads.
+The polar form for complex number -22.5 + 412.0i is a length of 412.613923662302 and an angle of 1.6253537823755386 rads.
+The polar form for complex number 22.0 + 534.0i is a length of 534.4529913846493 and an angle of 1.529621110179806 rads.
+The polar form for complex number -2.0 + -33.0i is a length of 33.06055050963308 and an angle of -1.6313283465770039 rads.
+The polar form for complex number 42452.0 + -93.527i is a length of 42452.10302564208 and an angle of -0.002203119963286686 rads.
+The polar form for complex number 0.29 + -244.0i is a length of 244.0001723360047 and an angle of -1.5696078027643652 rads.
+The polar form for complex number 765.25383 + 2332.0i is a length of 2454.3507133923767 and an angle of 1.253714895126573 rads.
+The square root of complex number 52.0 + 243.0i is 12.257681449804117 + 9.912151861471452i.
+The square root of complex number 663.0 + -34.0i is 25.757243859272542 + -0.6600085045155191i.
+The square root of complex number 134.0 + -244.0i is 14.359210447418787 + -8.496288876519023i.
+The square root of complex number -352.6 + -344.0i is 8.366842896568489 + -20.557335918252118i.
+The square root of complex number 928475.0 + 718.32432i is 963.5741481249615 + 0.3727395143372213i.
+The square root of complex number 83258.3 + -343.0i is 288.54575592716833 + -0.5943598076808596i.
+The square root of complex number 5532.0 + 95320.0i is 224.7358370145729 + 212.07120605740113i.
+The square root of complex number -423.42 + 43253.0i is 146.34147132602047 + 147.78107534412i.
+The square root of complex number 22.0 + 53.0i is 6.300185193373854 + 4.206225561094786i.
+The square root of complex number 13.0 + 22.0i is 4.390550345820059 + 2.5053806774980596i.
+The conjugate of complex number 4225.0 + 5123.0i is 4225.0 + -5123.0i.
+The conjugate of complex number 22.42 + 534.42i is 22.42 + -534.42i.
+The conjugate of complex number 434.0 + 5153.0i is 434.0 + -5153.0i.
+The conjugate of complex number 43.53 + 523.0i is 43.53 + -523.0i.
+The conjugate of complex number 775.0 + 45.5i is 775.0 + -45.5i.
+The conjugate of complex number 364.0 + 22.0i is 364.0 + -22.0i.
+The conjugate of complex number 1.0 + 2.0i is 1.0 + -2.0i.
+The conjugate of complex number 3.0 + 4.0i is 3.0 + -4.0i.
+The conjugate of complex number 0.0 + 0.0i is 0.0 + -0.0i.
+The conjugate of complex number 343.53 + 63.0i is 343.53 + -63.0i.
+The statement that complex number 1.0 + 1.0i is equal to 1.0 + 1.0i is true
+The statement that complex number 2.0 + 2.0i is equal to 2.0 + 2.0i is true
+The statement that complex number -242.0 + 452.0i is equal to 55.0 + 2.423i is false
+The statement that complex number 33.0 + 22.0i is equal to 33.0 + 22.0i is true
+The statement that complex number 152.0 + 152.0i is equal to 325.0 + 423.0i is false
+The statement that complex number 99.0 + 991.0i is equal to 99.0 + 991.0i is true
+The statement that complex number 534.0 + 123.0i is equal to 534.0 + 123.0i is true
+The statement that complex number 0.0 + 0.0i is equal to 0.0 + 0.0i is true
+The statement that complex number 1235.0 + 1235.0i is equal to 1235.0 + 1235.0i is true
+The statement that complex number 0.0010 + 0.0020i is equal to 0.0010 + 0.0020i is true
