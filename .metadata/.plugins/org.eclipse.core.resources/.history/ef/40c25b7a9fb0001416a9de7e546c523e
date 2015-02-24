@@ -1,0 +1,53 @@
+package sort;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String line = "";
+		try {
+			BufferedReader inputReader = new BufferedReader(new FileReader("./data/a2_in.txt"));
+			line = inputReader.readLine();
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Couldn't find file");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Word[] words = wordArray(line);
+		Insertion.sortInsert(words);
+		
+		for (Word w : words){
+//			System.out.println(w.toString());
+		}
+	}
+	/* Creates an array of Word objects from a line in our input file
+	 * The file is formatted as follows:
+	 *  {at,461},{admittedly,720},{addicted,905},
+	 * This means we can ignore the braces, and know that a Word object can be defined as a String followed by an int
+	 * To do this, we'll split the string by ',' and take every i'th element as the word and every i+1'th element as the int
+	 */
+
+	public static Word[] wordArray(String line){
+		//Use regex to replace the { and } from the string
+		line = line.replaceAll("\\{|}", "");
+		//Split the string into an array 
+		String[] lineSplit = line.split(",");
+		Word[] words = new Word[lineSplit.length/2];
+		for (int i = 0; i < lineSplit.length/2; i++){
+			//The i*2'th element will always be the word and the i*2+1'th element will be the corresponding score.
+			Word newWord = new Word(lineSplit[i*2], Integer.parseInt(lineSplit[i*2+1]));
+			//Add each word to the array at i
+			words[i] = newWord;
+		}
+		//Return our words array
+		return words;
+	}
+}

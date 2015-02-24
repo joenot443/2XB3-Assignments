@@ -1,0 +1,486 @@
+package sort;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import org.junit.runners.MethodSorters;
+
+
+import org.apache.commons.lang3.time.StopWatch;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
+
+public class SortTest {
+	public static StopWatch clock;
+	public static String line1;
+	public static String line2;
+	public static String line3;
+	
+	public static String[][] insertTests;
+	public static String[][] comparableInsertTests;
+	public static String[][] binaryInsertTests;
+	
+	public static String[][] mergeTests;
+	public static String[][] heapTests;
+
+
+	
+	private String outputString;
+	/**
+	 * This test ensures that the file is correctly read from and that line1, line2, and line3 are populated
+	 */
+	@Test
+	public void readFromFileTest() {
+		readFromFile();
+		assertFalse(line1 == null);
+		assertFalse(line2 == null);
+		assertFalse(line3 == null);
+
+	}
+	
+	
+	@Test
+	
+	public void textFileCreation() throws FileNotFoundException{
+		Output.outputText();
+	}
+	
+	
+	
+	/**
+	 * This test will run SortInsert on line1, line2, and line3 and ensure that the arrays are correctly sorted after.
+	 * It will make this assertion by testing that each subsequent item in the array is greater or equal to the previous item.
+	 */
+	@Test	
+	public void testSortInsert(){
+		//If line1 is still null, we must readFromFile().
+		if (line1 == null) readFromFile();
+		//line1 contains the first line from the input file. It will be read through and an array of Word objects will be created.
+		Word[] testArray1 = wordArray(line1);
+		
+		//Reset and start the stopwatch
+		clock = new StopWatch();
+		clock.reset();
+		clock.start();
+		
+		//Use sortInsert to sort the array
+		Insertion.sortInsert(testArray1);
+		
+		clock.stop();
+
+		//Create an array containing the results of the test
+		double time = clock.getNanoTime() * 1e-9;
+
+		String[] test1Results = {"insertion sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray1.length; i++){
+			assertTrue(testArray1[i].compareTo(testArray1[i-1]) < 1);
+		}
+		
+		Word[] testArray2 = wordArray(line2);
+
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortInsert to sort the array
+		Insertion.sortInsert(testArray2);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+		
+		String[] test2Results = {"insertion sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray2.length; i++){
+			assertTrue(testArray2[i].compareTo(testArray2[i-1]) < 1);
+		}		
+		Word[] testArray3 = wordArray(line3);
+		
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortInsert to sort the array
+		Insertion.sortInsert(testArray3);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+
+		String[] test3Results = {"insertion sort", Double.toString(time)};
+		
+		//Place the tests result arrays in another array
+		
+		Output.insertTests = new String[][] {test1Results, test2Results, test3Results};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray3.length; i++){
+			assertTrue(testArray3[i].compareTo(testArray3[i-1]) < 1);
+		}
+	}
+	
+	
+	/**
+	 * This test will run SortComparable on line1, line2, and line3 and ensure that the arrays are correctly sorted after.
+	 * It will make this assertion by testing that each subsequent item in the array is greater or equal to the previous item.
+	 */
+	
+	
+	@Test
+	public void sortComparable(){
+		//If line1 is still null, we must readFromFile().
+		if (line1 == null) readFromFile();
+		//line1 contains the first line from the input file. It will be read through and an array of Word objects will be created.
+		Word[] testArray1 = wordArray(line1);
+		
+		//Reset and start the stopwatch
+		clock = new StopWatch();
+		clock.reset();
+		clock.start();
+		
+		//Use sortComparable to sort the array
+		Insertion.sortComparable(testArray1);
+		
+		clock.stop();
+
+		//Create an array containing the results of the test
+		double time = clock.getNanoTime() * 1e-9;
+
+		String[] test1Results = {"comparable binary sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray1.length; i++){
+			assertTrue(testArray1[i].compareTo(testArray1[i-1]) < 1);
+		}
+		
+		Word[] testArray2 = wordArray(line2);
+
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortComparable to sort the array
+		Insertion.sortComparable(testArray2);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+		
+		String[] test2Results = {"comparable binary sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray2.length; i++){
+			assertTrue(testArray2[i].compareTo(testArray2[i-1]) < 1);
+		}		
+		Word[] testArray3 = wordArray(line3);
+		
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortComparable to sort the array
+		Insertion.sortComparable(testArray3);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+
+		String[] test3Results = {"comparable binary sort", Double.toString(time)};
+		
+		//Place the tests result arrays in another array
+		
+		Output.comparableInsertTests = new String[][] {test1Results, test2Results, test3Results};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray3.length; i++){
+			assertTrue(testArray3[i].compareTo(testArray3[i-1]) < 1);
+		}
+	}
+	
+	/**
+	 * This test will run SortBinary on line1, line2, and line3 and ensure that the arrays are correctly sorted after.
+	 * It will make this assertion by testing that each subsequent item in the array is greater or equal to the previous item.
+	 */
+	
+	
+	@Test
+	public void testBinary(){
+		//If line1 is still null, we must readFromFile().
+		if (line1 == null) readFromFile();
+		//line1 contains the first line from the input file. It will be read through and an array of Word objects will be created.
+		Word[] testArray1 = wordArray(line1);
+		
+		//Reset and start the stopwatch
+		clock = new StopWatch();
+		clock.reset();
+		clock.start();
+		
+		//Use sortBinary to sort the array
+		Insertion.sortBinary(testArray1);
+		
+		clock.stop();
+
+		//Create an array containing the results of the test
+		double time = clock.getNanoTime() * 1e-9;
+
+		String[] test1Results = {"comparable binary sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray1.length; i++){
+			assertTrue(testArray1[i].compareTo(testArray1[i-1]) < 1);
+		}
+		
+		Word[] testArray2 = wordArray(line2);
+
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortBinary to sort the array
+		Insertion.sortBinary(testArray2);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+		
+		String[] test2Results = {"comparable binary sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray2.length; i++){
+			assertTrue(testArray2[i].compareTo(testArray2[i-1]) < 1);
+		}		
+		Word[] testArray3 = wordArray(line3);
+		
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortComparable to sort the array
+		Insertion.sortBinary(testArray3);
+		
+		clock.stop();
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+
+		String[] test3Results = {"comparable binary sort", Double.toString(time)};
+		
+		//Place the tests result arrays in another array
+		
+		Output.binaryInsertTests = new String[][] {test1Results, test2Results, test3Results};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray3.length; i++){
+			assertTrue(testArray3[i].compareTo(testArray3[i-1]) < 1);
+		}
+	}
+	
+	/**
+	 * This test will run SortMerge on line1, line2, and line3 and ensure that the arrays are correctly sorted after.
+	 * It will make this assertion by testing that each subsequent item in the array is greater or equal to the previous item.
+	 */
+	
+	
+	@Test
+	public void testMerge(){
+		//If line1 is still null, we must readFromFile().
+		if (line1 == null) readFromFile();
+		//line1 contains the first line from the input file. It will be read through and an array of Word objects will be created.
+		Word[] testArray1 = wordArray(line1);
+		
+		//Reset and start the stopwatch
+		clock = new StopWatch();
+		clock.reset();
+		clock.start();
+		
+		//Use sortMerge to sort the array
+		Merge.sortMerge(testArray1);
+		
+		clock.stop();
+
+		//Create an array containing the results of the test
+		double time = clock.getNanoTime() * 1e-9;
+
+		String[] test1Results = {"merge sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray1.length; i++){
+			assertTrue(testArray1[i].compareTo(testArray1[i-1]) < 1);
+		}
+		
+		Word[] testArray2 = wordArray(line2);
+
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortMerge to sort the array
+		Merge.sortMerge(testArray2);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+		
+		String[] test2Results = {"merge sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray2.length; i++){
+			assertTrue(testArray2[i].compareTo(testArray2[i-1]) < 1);
+		}		
+		Word[] testArray3 = wordArray(line3);
+		
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortMerge to sort the array
+		Merge.sortMerge(testArray3);
+		
+		clock.stop();
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+
+		String[] test3Results = {"merge sort", Double.toString(time)};
+		
+		//Place the tests result arrays in another array
+		
+		Output.mergeTests = new String[][] {test1Results, test2Results, test3Results};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray3.length; i++){
+			assertTrue(testArray3[i].compareTo(testArray3[i-1]) < 1);
+		}
+	}
+	
+	/**
+	 * This test will run SortHeap on line1, line2, and line3 and ensure that the arrays are correctly sorted after.
+	 * It will make this assertion by testing that each subsequent item in the array is greater or equal to the previous item.
+	 */
+	
+	
+	@Test
+	public void testHeap(){
+		//If line1 is still null, we must readFromFile().
+		if (line1 == null) readFromFile();
+		//line1 contains the first line from the input file. It will be read through and an array of Word objects will be created.
+		Word[] testArray1 = wordArray(line1);
+		
+		//Reset and start the stopwatch
+		clock = new StopWatch();
+		clock.reset();
+		clock.start();
+		
+		//Use sortHeap to sort the array
+		Heap.sortHeap(testArray1);
+		
+		clock.stop();
+
+		//Create an array containing the results of the test
+		double time = clock.getNanoTime() * 1e-9;
+
+		String[] test1Results = {"heap sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray1.length; i++){
+			assertTrue(testArray1[i].compareTo(testArray1[i-1]) < 1);
+		}
+		
+		Word[] testArray2 = wordArray(line2);
+
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortHeap to sort the array
+		Heap.sortHeap(testArray2);
+		
+		clock.stop();
+		
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+		
+		String[] test2Results = {"heap sort", Double.toString(time)};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray2.length; i++){
+			assertTrue(testArray2[i].compareTo(testArray2[i-1]) < 1);
+		}		
+		Word[] testArray3 = wordArray(line3);
+		
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortMerge to sort the array
+		Heap.sortHeap(testArray3);
+		
+		clock.stop();
+		//Create an array containing the results of the test
+		time = clock.getNanoTime() * 1e-9;		
+
+		String[] test3Results = {"heap sort", Double.toString(time)};
+		
+		//Place the tests result arrays in another array
+		
+		Output.heapTests = new String[][] {test1Results, test2Results, test3Results};
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray3.length; i++){
+			assertTrue(testArray3[i].compareTo(testArray3[i-1]) < 1);
+		}
+	}
+	
+	
+	public static void readFromFile() {
+		
+		//Try to read from ./data/a2_in.txt
+		//line1-3 will contain the first three lines of the file.
+		try {
+			BufferedReader inputReader = new BufferedReader(new FileReader("./data/a2_in.txt"));
+			line1 = inputReader.readLine();
+			line2 = inputReader.readLine();
+			line3 = inputReader.readLine();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Couldn't find file");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+
+	
+	public static Word[] wordArray(String line){
+		//Use regex to replace the { and } from the string
+		line = line.replaceAll("\\{|}", "");
+		//Split the string into an array 
+		String[] lineSplit = line.split(",");
+		Word[] words = new Word[lineSplit.length/2];
+		for (int i = 0; i < lineSplit.length/2; i++){
+			//The i*2'th element will always be the word and the i*2+1'th element will be the corresponding score.
+			Word newWord = new Word(lineSplit[i*2], Integer.parseInt(lineSplit[i*2+1]));
+			//Add each word to the array at i
+			words[i] = newWord;
+		}
+		//Return our words array
+		return words;
+	}
+}

@@ -1,0 +1,22 @@
+package sort;
+
+public class Output {
+	
+	public static String[][] insertTests;
+	public static String[][] comparableInsertTests;
+	public static String[][] binaryInsertTests;
+	
+	public static String[][] mergeTests;
+	public static String[][] heapTests;
+	
+	public static void outputText(){
+//		while(SortTest.insertTests == null || SortTest.comparableInsertTests == null || SortTest.binaryInsertTests == null || SortTest.mergeTests == null || SortTest.heapTests == null){
+//			System.out.println("Someone's still null");
+//		}
+		
+		System.out.println(heapTests[0][0]);
+		
+//		String[][] a = SortTest.insertTests;
+		System.out.println("Got it");
+	}
+}

@@ -1,0 +1,49 @@
+package sort;
+
+public class Word implements Comparable<Word>{
+	private String word;
+	private int score;
+	
+	public Word(String w, int s)
+	{
+		this.word = w;
+		this.score = s;
+	}
+	
+	public int getScore()
+	{
+		//TODO
+		return 0;
+	}
+	
+	public void setScore(int s)
+	{
+		//TODO
+	}
+	
+	public String getWord()
+	{
+		//TODO
+		return "";
+	}
+	
+	public void setWord()
+	{
+		//TODO
+	}
+	
+	@Override
+	public int compareTo(Word w)
+	{
+		//TODO
+		return 0;
+	}
+	
+	
+	public String toString()
+	{
+		//TODO
+		return "";
+	}
+
+}

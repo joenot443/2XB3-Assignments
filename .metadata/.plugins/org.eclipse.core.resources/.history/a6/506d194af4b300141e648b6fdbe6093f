@@ -1,0 +1,49 @@
+package sort;
+
+public class Output {
+	
+	public static String[][] insertTests;
+	public static String[][] comparableInsertTests;
+	public static String[][] binaryInsertTests;
+	
+	public static String[][] mergeTests;
+	public static String[][] heapTests;
+	
+	public static void outputText(){
+
+		//{"256", "comparable sort", 0.001}
+		
+		//First we'll create String[][] of each line's worth of test cases
+		
+		String[][] line1Tests = {insertTests[0], comparableInsertTests[0], binaryInsertTests[0], mergeTests[0], heapTests[0]};
+		String[][] line2Tests = {insertTests[1], comparableInsertTests[1], binaryInsertTests[1], mergeTests[1], heapTests[1]};
+		String[][] line3Tests = {insertTests[2], comparableInsertTests[2], binaryInsertTests[2], mergeTests[2], heapTests[2]};
+
+		//Sort the output tests using standard insertion sort
+		
+		sortOutputTests(line1Tests);
+		sortOutputTests(line2Tests);
+		sortOutputTests(line3Tests);
+		
+	}
+	
+	public static void sortOutputTests (String[][] x) {
+		//First find the length of the array to be sorted
+		
+		int N = x.length;
+		//Iterate through this array
+		for (int i = 0; i < N; i++)
+		{
+			//Loop through the array, moving elements back until a smaller element is found
+			for (int j = i; j > 0 && Double.parseDouble(x[j][2]) < Double.parseDouble(x[j-1][2]); j--){
+				//Move the element back in the array
+				exchange(x, j, j-1);
+			}
+		}
+	}
+	public static void exchange(String[][] x, int i, int j){
+		String[] a = x[i];
+		x[i] = x[j];
+		x[j] = a;
+	}
+}

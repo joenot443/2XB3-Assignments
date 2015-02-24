@@ -1,0 +1,125 @@
+package sort;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.apache.commons.lang3.time.StopWatch;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.junit.Test;
+
+public class SortTest {
+	public static StopWatch clock;
+	private static String line1;
+	private static String line2;
+	private static String line3;
+	
+	private String outputString;
+	/**
+	 * This test ensures that the file is correctly read from and that line1, line2, and line3 are populated
+	 */
+	@Test
+	public void readFromFileTest() {
+		readFromFile();
+		assertFalse(line1 == null);
+		assertFalse(line2 == null);
+		assertFalse(line3 == null);
+
+	}
+	/**
+	 * This test will run SortInsert on line1, line2, and line3 and ensure that the arrays are correctly sorted after.
+	 * It will make this assertion by testing that each subsequent item in the array is greater or equal to the previous item.
+	 */
+	@Test
+	public void testSortInsert(){
+		//If line1 is still null, we must readFromFile().
+		if (line1 == null) readFromFile();
+		//line1 contains the first line from the input file. It will be read through and an array of Word objects will be created.
+		Word[] testArray1 = wordArray(line1);
+		
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortInsert to sort the array
+		Insertion.sortInsert(testArray1);
+		
+		clock.stop();
+
+		//Create an array containing the results of the test
+		
+		String[] test1Results = ["16", "insertion sort", ""]
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray1.length; i++){
+			assertTrue(testArray1[i].compareTo(testArray1[i-1]) > -1);
+		}
+		
+		Word[] testArray2 = wordArray(line1);
+
+		//Reset and start the stopwatch
+		clock.reset();
+		clock.start();
+		
+		//Use sortInsert to sort the array
+		Insertion.sortInsert(testArray2);
+		
+		clock.stop();
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray2.length; i++){
+			assertTrue(testArray2[i].compareTo(testArray2[i-1]) > -1);
+		}
+		
+		Word[] testArray3 = wordArray(line1);
+
+		//Use sortInsert to sort the array
+		Insertion.sortInsert(testArray3);
+		
+		//Test that each item is greater than the item before it. Obviously we must start at index 1 because there is no prior entry to index 0.
+		for (int i = 1; i < testArray3.length; i++){
+			assertTrue(testArray3[i].compareTo(testArray3[i-1]) > -1);
+		}
+	}
+	
+	public static void readFromFile() {
+		
+		//Try to read from ./data/a2_in.txt
+		//line1-3 will contain the first three lines of the file.
+		try {
+			BufferedReader inputReader = new BufferedReader(new FileReader("./data/a2_in.txt"));
+			line1 = inputReader.readLine();
+			line2 = inputReader.readLine();
+			line3 = inputReader.readLine();
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Couldn't find file");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+	public static Word[] wordArray(String line){
+		//Use regex to replace the { and } from the string
+		line = line.replaceAll("\\{|}", "");
+		//Split the string into an array 
+		String[] lineSplit = line.split(",");
+		Word[] words = new Word[lineSplit.length/2];
+		for (int i = 0; i < lineSplit.length/2; i++){
+			//The i*2'th element will always be the word and the i*2+1'th element will be the corresponding score.
+			Word newWord = new Word(lineSplit[i*2], Integer.parseInt(lineSplit[i*2+1]));
+			//Add each word to the array at i
+			words[i] = newWord;
+		}
+		//Return our words array
+		return words;
+	}
+}

@@ -1,0 +1,3 @@
+16,insertion sorts,3.1E-5s,comparable binary sorts,3.2000000000000005E-5s,merge sorts,7.94E-4s,heap sorts,7.95E-4s,comparable binary sorts,0.007529s
+256,merge sorts,6.13E-4s,heap sorts,8.960000000000001E-4s,comparable binary sorts,0.0014500000000000001s,insertion sorts,0.0032510000000000004s,comparable binary sorts,0.010486s
+4096,insertion sorts,0.019175s,merge sorts,0.023364000000000003s,heap sorts,0.025516s,comparable binary sorts,0.047056s,comparable binary sorts,0.10944300000000001s

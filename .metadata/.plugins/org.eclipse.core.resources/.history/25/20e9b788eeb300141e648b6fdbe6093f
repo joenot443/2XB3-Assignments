@@ -1,0 +1,11 @@
+package sort;
+
+public class Output {
+	
+	public static void outputText(){
+		while(SortTest.insertTests == null || SortTest.comparableInsertTests == null || SortTest.binaryInsertTests == null || SortTest.mergeTests == null || SortTest.heapTests == null){
+
+		String[][] a = SortTest.insertTests;
+
+	}
+}

@@ -1,0 +1,39 @@
+package sort;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String line = "";
+		try {
+			BufferedReader inputReader = new BufferedReader(new FileReader("./data/a2_in.txt"));
+			line = inputReader.readLine();
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Couldn't find file");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		wordArray(line);
+	}
+	/* Creates an array of Word objects from a line in our input file
+	 * The file is formatted as follows:
+	 *  {at,461},{admittedly,720},{addicted,905},
+	 * This means we can ignore the braces, and know that a Word object can be defined as a String followed by an int
+	 * To do this, we'll split the string by ',' and take every i'th element as the word and every i+1'th element as the int
+	 */
+
+	public static Word[] wordArray(String line){
+		line = line.replaceAll("\\{", "");
+//		String[] lineSplit = line.split("[^\\{},]");
+		System.out.println(line);
+		return null;
+	}
+}

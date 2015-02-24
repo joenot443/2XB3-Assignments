@@ -1,0 +1,5 @@
+SFWR ENG 2XB3
+Joseph Crozier
+1311502
+I declare on this day of Friday February 13, 2015 that any and all work submitted in this assignment is an original creation contributed to solely by I, Joseph Crozier
+- I used the lang3 version of StopWatch because it included a method called getNanoTime() which allowed me to time the functions more precisely. GetNanoTime() returns the StopWatch’s time expressed in ns, rather than ms. The time was still converted into seconds, as per the requirements of the project.

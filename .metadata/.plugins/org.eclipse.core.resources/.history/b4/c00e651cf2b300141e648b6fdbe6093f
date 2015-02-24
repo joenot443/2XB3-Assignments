@@ -1,0 +1,36 @@
+package sort;
+
+public class Output {
+	
+	public static String[][] insertTests;
+	public static String[][] comparableInsertTests;
+	public static String[][] binaryInsertTests;
+	
+	public static String[][] mergeTests;
+	public static String[][] heapTests;
+	
+	public static void outputText(){
+
+		//{"256", "comparable sort", 0.001}
+		
+		//First we'll create input
+		
+		String[][] line1Tests = {insertTests[0], comparableInsertTests[0], binaryInsertTests[0], mergeTests[0], heapTests[0]};
+		System.out.println(line1Tests);
+	}
+	
+	public static void sortOutputTests (String[][] x) {
+		//First find the length of the array to be sorted
+		
+		int N = x.length;
+		//Iterate through this array
+		for (int i = 0; i < N; i++)
+		{
+			//Loop through the array, moving elements back until a smaller element is found
+//			for (int j = i; j > 0 && x[j].getScore() < x[j-1].getScore(); j--){
+//				//Move the element back in the array
+//				exchange(x, j, j-1);
+//			}
+		}
+	}
+}

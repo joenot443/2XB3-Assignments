@@ -1,0 +1,57 @@
+package sort;
+
+public class Insertion {
+	
+	//Exchanges element [i] with element [j]
+	public static void exchange(Word[] x, int i, int j){
+		Word a = x[i];
+		x[i] = x[j];
+		x[j] = a;
+	}
+	
+	/**
+	 * regular insertion sort
+	 * @param x - the input array containing scores of words that need to be sorted.
+	 */
+	public static void sortInsert ( Word[] x) {
+		//First find the length of the array to be sorted
+		
+		int N = x.length;
+		//Iterate through this array
+		for (int i = 0; i < N; i++)
+		{
+			//Find the smallest entry in a[i+1..N] and exchange a[i] with it
+			//Test if x[i] is less than our current minimum
+			for (int j = i; j > 0 && x[j].getScore() < x[j-1].getScore(); j--){
+				exchange(x, i, j-1);
+			}
+			//After iterating through, exchange the elements
+		}
+	}
+	/**
+	 * insertion sort using Comparable
+	 * @param x - the input array containing scores of words that need to be sorted.
+	 */
+	public static void sortComparable ( Comparable[] x) {
+		int N = x.length;
+		//Iterate through this array
+		for (int i = 0; i < N; i++)
+		{
+			//Find the smallest entry in a[i+1..N] and exchange a[i] with it
+			int min = i;
+			for (int j = i+1; j < N; j++){
+				//Use the compareTo method to test if x[i] is less than our current minimum
+				if (x[j].compareTo(x[min]) == -1) min = j;
+			}
+			//After iterating through, exchange the elements
+			exchange((Word[]) x, i, min);
+		}
+	}
+	/**
+	 * optimized insertion sort
+	 * @param x - the input array containing scores of words that need to be sorted.
+	 */
+	public static void sortBinary ( Comparable[] x) {
+		
+	}
+}

@@ -1,0 +1,69 @@
+package sort;
+
+public class Merge {
+	
+	//An additional, auxiliary array to be used for merges
+	private static Comparable[] aux;
+	
+	/**
+	 * merge sort using Comparable array as input 
+	 * @param x - the input array containing scores of words that need to be sorted.
+	 */
+	public static void sortMerge (Comparable[] x ) {
+		
+		
+	}
+	/**
+	 * 
+	 * @param x - The array to be sorted
+	 * @param low - The index of the lower bound of the lower part of the array
+	 * @param hi - The index of the upper bound of the upper part of the array 
+	 */
+	public static void sortMerge(Comparable[] x, int low, int hi){
+		//Once hi <= low, the sort is done
+		if (hi <= low) return;
+		//Define the mid point of the array
+		int mid = low + (hi - low)/2;
+		
+		//Sort the left half of the array
+		sortMerge(x, low, mid); 
+		//Sort the right half of the array
+		sortMerge(x, mid+1, hi);
+		//Merge the two halves of the array
+		merge(x, low, hi);
+	}
+	/**
+	 * 
+	 * @param x - The array to be sorted
+	 * @param low - The index of the lower bound of the lower part of the array
+	 * @param hi - The index of the upper bound of the upper part of the array 
+	 * 
+	 * This method merges the two array halves. 
+	 */
+	public static void merge (Comparable[] x, int low, int hi){
+		
+		//Define the mid point of the array
+		int mid = low + (hi - low)/2;
+		
+		//Define the points at which to merge.
+		//We will be merging x[low..mid] with a[mid+1..hi]
+		int i = low;
+		int j = mid+1;
+		
+		//Copy x[low..hi] into aux[low..hi]
+		for (int k = low; k<= hi; k++){
+			aux[k] = x[k];
+		}
+		
+		for (int k = low; k <= hi; k++){
+			//If i > mid, then the left half is exhausted so we'll take from the right
+			if (i > mid)								x[k] = aux[j++];
+			//If j > hi, then the right half is exhausted so we'll take from the left
+			else if (j > hi)							x[k] = aux[i++];
+			//If aux[j] < aux[i], then we'll take from the right
+			else if (aux[j].compareTo(aux[i]) == -1)	x[k] = aux[j++];
+			//Otherwise, we know that aux[j] >= aux[i], so we'll take from the left
+			else										x[k] = aux[i++];
+		}
+	}
+}

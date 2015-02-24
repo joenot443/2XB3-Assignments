@@ -1,0 +1,15 @@
+package sort;
+
+public class Merge {
+	/**
+	 * merge sort using Comparable array as input 
+	 * @param x - the input array containing scores of words that need to be sorted.
+	 */
+	public static void sortMerge (Comparable[] x ) {
+		
+	}
+	
+	public static void merge (Comparable[] x, int low, int hi){
+		
+	}
+}

@@ -1,0 +1,17 @@
+package sort;
+
+public class Output {
+	
+	public static String[][] insertTests;
+	public static String[][] comparableInsertTests;
+	public static String[][] binaryInsertTests;
+	
+	public static String[][] mergeTests;
+	public static String[][] heapTests;
+	
+	public static void outputText(){
+
+		
+		
+	}
+}
